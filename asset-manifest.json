@@ -1,13 +1,21 @@
 {
   "main.css": "static/css/main.ea9b451f.css",
   "main.css.map": "static/css/main.ea9b451f.css.map",
-  "main.js": "static/js/main.9381e056.js",
-  "main.js.map": "static/js/main.9381e056.js.map",
-  "static/media/cipher.png": "static/media/cipher.f3d47607.png",
+  "main.js": "static/js/main.fc8726d1.js",
+  "main.js.map": "static/js/main.fc8726d1.js.map",
+  "static/media/camera.jpeg": "static/media/camera.0a7f98ca.jpeg",
+  "static/media/cctv.jpeg": "static/media/cctv.475b40b8.jpeg",
+  "static/media/facerecog.jpeg": "static/media/facerecog.4e36879b.jpeg",
   "static/media/fontawesome-webfont.eot": "static/media/fontawesome-webfont.674f50d2.eot",
   "static/media/fontawesome-webfont.svg?v=4.7.0": "static/media/fontawesome-webfont.912ec66d.svg",
   "static/media/fontawesome-webfont.ttf?v=4.7.0": "static/media/fontawesome-webfont.b06871f2.ttf",
   "static/media/fontawesome-webfont.woff2?v=4.7.0": "static/media/fontawesome-webfont.af7ae505.woff2",
   "static/media/fontawesome-webfont.woff?v=4.7.0": "static/media/fontawesome-webfont.fee66e71.woff",
-  "static/media/torsion.png": "static/media/torsion.cf51549d.png"
+  "static/media/purifier.jpeg": "static/media/purifier.71245fc5.jpeg",
+  "static/media/purifier1.jpeg": "static/media/purifier1.bf48eebf.jpeg",
+  "static/media/secure.jpeg": "static/media/secure.8d456585.jpeg",
+  "static/media/secure2.jpeg": "static/media/secure2.406b4f61.jpeg",
+  "static/media/softner.jpeg": "static/media/softner.d09b2d3a.jpeg",
+  "static/media/waterlevel.jpeg": "static/media/waterlevel.85d54169.jpeg",
+  "static/media/waterlevelfull.jpeg": "static/media/waterlevelfull.71def69e.jpeg"
 }
