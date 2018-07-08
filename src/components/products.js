@@ -4,102 +4,66 @@ import '../w3css.css';
 import textFont from '../styles/textfont.js';
 import headFont from '../styles/headfont.js';
 
-// All the products
-import controller from '../images/sigs/cipher.png'; 
-import purifier from '../images/sigs/medium.png';
-import softner from '../images/sigs/rovisp.png';
+// All the products 
+import waterlevel from '../images/products/waterlevel.jpeg'; 
+import purifier from '../images/products/purifier.jpeg';
+import softner from '../images/products/softner.jpeg';
+import thumb from '../images/products/thumb.jpeg';
+import vediodoor from '../images/products/vediodoor.jpeg';
+import cctvset from '../images/products/cctvset.jpeg';
 
-var sigList = [
-    {sig : controller, name: 'Water Level Controller', link : ''},
-    {sig : purifier, name: 'Purifier' , link : ''},
-    {sig : softner, name: 'Softner' , link : ''}
-]
+// var sigList = [
+//     {sig : controller, name: 'Water Level Controller', link : ''},
+//     {sig : purifier, name: 'Purifier' , link : ''},
+//     {sig : softner, name: 'Softner' , link : ''}
+// ]
 
 var imgStyle = {
     height: '30vh',
-    maxHeight: '400px'
+    maxHeight: '400px',
+    maxWidth:'350px'
 }
 
 var newtextfont = Object.assign({ maxWidth: '100%', overflowX: 'hidden'},textFont);
 newtextfont.height = '80%';
-export default class Products extends React.Component{
-
-    constructor(){
-        super();
-        this.state = {
-            currentSig : sigList[0],
-            index : 0,
-            animate : 'w3-animate-right'	
-        }
-    }
-
-    changeClass(val){
-        var App = this;
-        setTimeout(()=>{
-            if(val === -1)
-                App.setState({
-                    animate : 'w3-animate-left'
-                })
-            else
-                App.setState({
-                    animate : 'w3-animate-right'
-                })
-        }, 500)
-       
-    }
-
-    changeSig(val){
-        var pos = this.state.index;
-        
-        this.setState({
-            animate : 'w3-hide'
-        });
-
-        if(val === -1){
-            pos--;
-            if(pos<0)
-                pos = sigList.length - 1;
-        }
-        else{
-            pos = pos + val;
-            pos = pos % sigList.length;
-        }
-
-        this.setState({
-            index : pos
-        });
-        this.setState({
-            currentSig : sigList[pos]
-        })
-
-        this.changeClass(val);
-
-    }
-
-    componentDidMount(){
-        var App = this;
-        setInterval(()=>{
-            App.changeSig(1)
-        }, 10000)
-    }
-
-    render(){
+function Products(props){
         return(
-            <div className="w3-card w3-padding" style={{height:'70vh',minHeight:'500px'}} >
+            <div className="w3-card" style={{minHeight:'500px'}} >
                 <h1 className="w3-center w3-margin w3-jumbo" style={headFont} > <b> Products </b></h1>
-                <div className="w3-padding w3-large w3-center w3-display-container"  style={newtextfont}>
-                    <h4 className={"w3-xxlarge w3-center " + this.state.animate} style={textFont} >{this.state.currentSig.name}</h4>
-                    <img className={'w3-image w4-left' +  this.state.animate} src={this.state.currentSig.sig} alt={this.state.currentSig.name} style={imgStyle} />
-                    
-                    <div class="w3-cell w3-right" style={{"maxWidth": "270px"}}>
-	                    <p class="w3-padding">This is devive is used to control the water level.</p>
-	                    <p><button class="w3-button w3-red">Read detail</button></p>
-                    </div>
-
-                    <div className="w3-display-left" ><i className="fa fa-angle-left w3-button w3-hover-white w3-xxlarge w3-opacity" aria-hidden="true" onClick={this.changeSig.bind(this,-1)}></i></div>
-                    <div className="w3-display-right" ><i className="fa fa-angle-right w3-button w3-hover-white w3-xxlarge w3-opacity" aria-hidden="true" onClick={this.changeSig.bind(this,1)}></i></div>
-                </div>
+                <div className="w3-row w3-mobile">
+				<div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">Water Level Controller</h1>
+                    <img className="w3-margin" src={waterlevel} style={imgStyle}/>
+					<p className="w3-margin">Automatically stops water overflow from tanks</p> 
+				</div>
+                <div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">Water Purifier</h1>
+                    <img className="w3-margin" src={purifier} style={imgStyle}/>
+					<p className="w3-margin">Aquastar Water purifier Make your water 100% pure and healthy from water burn diesease.</p> 
+				</div>
+                <div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">Water Softner</h1>
+                    <img className="w3-margin" src={softner} style={imgStyle}/>
+					<p className="w3-margin">Make hard water soft in your home.<br/>Pentair water softners rreduce hardness in water by exchanging salts of calcium and magnesium with sodium.The water softners help in generating leather to provide superior and brighter washing.</p> 
+				</div>
+                <div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">CCTV camera</h1>
+                    <img className="w3-margin" src={cctvset} style={imgStyle}/>
+					<p className="w3-margin">CCTV secure your home,office with hikvision.The smart playback function provides wasy way to get through the less effective information when you select the smart playback mode the system will analyse the vedio containing the motion make it with green colour and play it in normal.</p> 
+				</div>
+                <div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">Vedio Door Security</h1>
+                    <img className="w3-margin" src={vediodoor} style={imgStyle}/>
+					<p className="w3-margin">Hands free vedio intercommunication support monitoring the door station and the external analog camera,Outdoor door station self adaptive IR suppliment one touch calling PIN hole camera with 720*576 unblock controlling.</p> 
+				</div>
+                <div className="w3-col w3-light-grey w3-card m6 l8 w3-margin" style={{"maxWidth":"400px","height":"500px"}}>
+					<h1 className=" w3-margin">Biometric attendence</h1>
+                    <img className="w3-margin" src={thumb} style={imgStyle}/>
+					<p className="w3-margin">Restrict unauthorised entry secure sensitive areas.It controls access based on user zone and time.Get realtime notification on exceptions.Integrates fire alarm and other devises for better safety.</p> 
+				</div>
+			</div>    
             </div>        
         )
-    }
 }
+
+export default Products;
